@@ -1,17 +1,28 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import {lorem} from "faker"; 
+import { lorem } from "faker";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  randomeText : string= lorem.sentence();
-  onChangeInpout(Text: string) {
-    console.log(Text);
+  randomeText: string = lorem.sentence();
+  inputText: string = '';
+
+  onChangeInpout(text: string) {
+    this.inputText = text;
+  }
+
+  compare(letterRandome: string, letterEnter: string): string {
+
+    if (!letterEnter) {
+      return 'pending';
+    }
+
+    return letterRandome === letterEnter ? 'correct' : 'incorrect';
   }
 }
-  
