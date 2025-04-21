@@ -4,13 +4,13 @@
     <h1 class="title has-test-centered">
       Typing Challenge
     </h1>
-    <p class="has-text-centered">Randome text</p>
+    <p class="has-text-centered">{{randomeText}}</p>
     <div class="field">
-      <input type="text" class="input">
+      <input type="text" class="input" (input)="onChangeInpout($any($event.target).value)" />
     </div>
     <div class="box has-text-centered">
       <h1 class="title">success!</h1>
     </div>
    </div>
   </div>
-</div>
+</div> 

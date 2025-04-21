@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import {lorem} from "faker"; 
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -9,5 +9,9 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'mini-pro';
+  randomeText : string= lorem.sentence();
+  onChangeInpout(Text: string) {
+    console.log(Text);
+  }
 }
+  
